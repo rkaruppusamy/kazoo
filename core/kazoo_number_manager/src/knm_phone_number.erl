@@ -1049,6 +1049,7 @@ store_maybe_push(Db, Doc) ->
 %%--------------------------------------------------------------------
 -spec push_stored() -> 'ok'.
 push_stored() ->
+    lager:debug("pushing stored writes"),
     DBs = [Db || {Db=?NE_BINARY, I} <- get(),
                  is_integer(I)
           ],
