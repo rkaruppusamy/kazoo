@@ -47,7 +47,9 @@
         ]).
 
 -export([list_attachments/2]).
+-ifndef(TEST).
 -export([push_stored/0]).
+-endif.
 
 -include("knm.hrl").
 -include_lib("kazoo/src/kz_json.hrl").
@@ -1004,6 +1006,7 @@ maybe_remove_number_from_account(Number) ->
             end
     end.
 
+-ifndef(TEST).
 %%--------------------------------------------------------------------
 %% @private
 %% @doc
@@ -1062,3 +1065,4 @@ push_stored(Db) ->
         andalso lager:debug("save_docs ~p failed: ~p",
                             [[kz_doc:id(Doc) || Doc <- Docs], element(2,R)]),
     R.
+-endif.
