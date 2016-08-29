@@ -10276,6 +10276,12 @@
                     "name": "should_age",
                     "type": "boolean"
                 },
+                "should_bulk_batch_writes": {
+                    "default": false,
+                    "description": "number_manager should bulk batch writes",
+                    "name": "should_bulk_batch_writes",
+                    "type": "boolean"
+                },
                 "should_permanently_delete": {
                     "description": "number_manager should permanently delete",
                     "name": "should_permanently_delete",
